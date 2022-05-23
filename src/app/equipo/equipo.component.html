@@ -1,0 +1,10 @@
+<table [ngClass]="equipo.nombre">
+    <tr *ngFor="let jugador of equipo.jugadores">
+        <td>{{jugador.nombre}}</td>
+        <td>
+            <button (click)="addCanasta(1, jugador.nombre)">Libre</button>
+            <button (click)="addCanasta(2, jugador.nombre)">Doble</button>
+            <button (click)="addCanasta(3, jugador.nombre)">Triple</button>
+        </td>
+    </tr>
+</table>

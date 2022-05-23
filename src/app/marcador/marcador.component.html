@@ -1,1 +1,24 @@
-<p>marcador works!</p>
+<div class="marcador">
+    <div class="logo">
+        <img [src]="equipoLocal.logo" alt="">
+    </div>
+    <div class="puntos">
+        <span>{{puntosLocales}}</span>
+        <img [src]="urlLogoNBA" alt="">
+        <span>{{puntosVisitantes}}</span>
+    </div>
+    <div class="logo">
+        <img [src]="equipoVisitante.logo" alt="">
+    </div>
+</div>
+<div class="equipos">
+    <!-- $event recibe el objeto que emite el hijo -->
+    <app-equipo class="equipo"
+                [equipo]="equipoLocal"
+                (canasta)="setCanastaLocal($event)"></app-equipo>
+    <app-equipo class="equipo"
+                (canasta)="setCanastaVisitante($event)"
+                [equipo]="equipoVisitante"></app-equipo>
+</div>
+<app-top-score [equipoLocal]="equipoLocal"
+               [equipoVisitante]="equipoVisitante"></app-top-score>
