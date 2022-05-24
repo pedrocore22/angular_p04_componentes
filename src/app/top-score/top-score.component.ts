@@ -21,4 +21,14 @@ export class TopScoreComponent implements OnInit {
     ];
   }
 
+  ngAfterContentChecked() {
+    this.sortJugadores();
+  }
+
+  sortJugadores(): void {
+    this.jugadores.sort((a: any, b: any) => {
+      return (b.puntos - a.puntos);
+    })
+  }
+
 }
